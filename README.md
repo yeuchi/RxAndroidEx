@@ -8,7 +8,7 @@ Thanks to Jessica Thornsby article <sup>[6]</sup> for the operators.
 <img width="584" alt="Screen Shot 2020-06-27 at 3 16 09 PM" src="https://user-images.githubusercontent.com/1282659/85931324-32c4a580-b889-11ea-8921-062558350419.png">
 
 # Unit Tests
-All operators above have espresso tests.
+All operators above have most basic 'happy path' test(s).
 https://github.com/yeuchi/NetworkRequestsKotlin/tree/master/app/src/androidTest/java/com/ctyeung/networkrequestex
 
 # References
