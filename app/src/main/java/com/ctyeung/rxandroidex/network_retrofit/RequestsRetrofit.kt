@@ -1,20 +1,28 @@
 package com.ctyeung.rxandroidex.network_retrofit
 
-import com.ctyeung.networkrequestex.network_rxjava.RetrofitBuilder
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
 class RequestsRetrofit {
-    var list: List<User>? = null
+    var startTime:Long = System.currentTimeMillis()
+    open var refresh:((String, String)->Unit)? = null
+    var list:List<User>?=null
     var myCompositeDisposable = CompositeDisposable()
-    var refreshUI:((String)->Unit)?=null
 
-    fun getUsers(refresh: ((String) -> Unit)? = null) {
-        this.refreshUI = refresh
+    constructor(refresh:((String, String)->Unit)?=null) {
+        this.refresh = refresh
+    }
+
+    fun startTimer() {
+        startTime = System.currentTimeMillis()
+    }
+
+    fun getUsers() {
+        startTimer()
+
         val requestInterface = RetrofitBuilder.apiService
 
-//Add all RxJava disposables to a CompositeDisposable//
         myCompositeDisposable?.add(
             requestInterface.getUsers()
                 .observeOn(AndroidSchedulers.mainThread())
@@ -24,7 +32,13 @@ class RequestsRetrofit {
 
     private fun onHandleResponse(users:List<User>) {
         this.list = users
-        this.refreshUI?.invoke("size:${list?.size}")
+        this.refresh?.invoke("size:${list?.size}", getElapsedString())
+    }
+
+    fun getElapsedString():String {
+        var stopTime = System.currentTimeMillis()
+        var elapsed = stopTime - startTime
+        return elapsed.toString() + "ms"
     }
 
     fun destroy() {
