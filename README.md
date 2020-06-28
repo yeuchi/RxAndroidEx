@@ -1,6 +1,9 @@
 # RxAndroidEx
 Exercise various RxJava operators on Android
 
+## User Interface
+<img width="584" src="https://user-images.githubusercontent.com/1282659/85935215-f65a6f00-b8b3-11ea-8724-25952f1bb77a.jpg">
+
 ## RetroFit + RxAndroid
 Thanks to Jessica Thornsby article <sup>[6]</sup> for the operators. \
 Identical code as those in NetworkRequestKotlin exercise, working with RxJava library. \
