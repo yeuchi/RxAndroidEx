@@ -1,7 +1,7 @@
 # RxAndroidEx
 Exercise various RxJava operators on Android
 
-Primary principle: Observable -> Observer + Scheduler
+Primary principle: Observable -> Observer + Scheduler \
 Secondary principle: define onError(), cancel -> unsubscribe()
 
 ## User Interface
