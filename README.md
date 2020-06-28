@@ -23,8 +23,8 @@ https://github.com/yeuchi/NetworkRequestsKotlin/tree/master/app/src/androidTest/
 
 # References
 
-1. Connect to an API With Retrofit, RxJava 2, and Kotlin by Jessica Thornsby, 14 Nov 2018
+1. Connect to an API With Retrofit, RxJava 2, and Kotlin by Jessica Thornsby, 14 Nov 2018 \
 https://code.tutsplus.com/tutorials/connect-to-an-api-with-retrofit-rxjava-2-and-kotlin--cms-32133
 
-2. Fundamentals of RxJava with Kotlin for absolute beginners by Gabriel Leon de Mattos, March 31, 2019
+2. Fundamentals of RxJava with Kotlin for absolute beginners by Gabriel Leon de Mattos, March 31, 2019 \
 https://medium.com/@gabrieldemattosleon/fundamentals-of-rxjava-with-kotlin-for-absolute-beginners-3d811350b701
