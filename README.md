@@ -28,3 +28,6 @@ https://code.tutsplus.com/tutorials/connect-to-an-api-with-retrofit-rxjava-2-and
 
 2. Fundamentals of RxJava with Kotlin for absolute beginners by Gabriel Leon de Mattos, March 31, 2019 \
 https://medium.com/@gabrieldemattosleon/fundamentals-of-rxjava-with-kotlin-for-absolute-beginners-3d811350b701
+
+3. RxBinding by Jake Wharton, Jan 29, 2018 \
+https://github.com/JakeWharton/RxBinding
