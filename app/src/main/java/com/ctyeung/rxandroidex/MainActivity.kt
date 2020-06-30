@@ -9,12 +9,21 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.ctyeung.rxandroidex.databinding.ActivityMainBinding
 import com.ctyeung.rxandroidex.debounce.EmailEditText
+import com.ctyeung.rxandroidex.maps.TransformStuff
 import com.ctyeung.rxandroidex.network_retrofit.RequestsRetrofit
 import com.ctyeung.rxandroidex.timer.LinearTimeTask
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.Observable
 import java.lang.Exception
 
+/*
+ * per Brad's suggestion:
+ * - flatmap, map
+ * - zip, zipwith
+ * - chaining
+ * - filter
+ *
+ */
 class MainActivity : AppCompatActivity() {
     lateinit var binding:ActivityMainBinding
     var timer:LinearTimeTask?=null
@@ -26,7 +35,23 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.layout = this
 
-        tryDebounce()
+        tryMap()
+    }
+
+    fun tryMap() {
+
+        var action : (String) -> Unit = {
+                msg: String ->
+            showToast("action: ${msg}")
+        }
+
+        var refresh : (String) -> Unit = {
+                msg: String ->
+            showToast("refresh: ${msg}")
+        }
+
+        var transform = TransformStuff(refresh, action)
+        transform.map()
     }
 
     fun onClickLogin() {
