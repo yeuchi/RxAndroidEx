@@ -10,12 +10,12 @@ import java.util.concurrent.TimeUnit
  * https://code.tutsplus.com/tutorials/kotlin-reactive-programming-for-an-android-sign-up-screen--cms-31585
  */
 class EmailEditText {
-    var refresh:((String)->Unit)? = null
+    var toast:((String)->Unit)? = null
     var observable: Observable<Boolean>? = null
     var emailAddress: EditText? = null
 
     constructor(refresh:((String)->Unit)?=null) {
-        this.refresh = refresh
+        this.toast = refresh
     }
 
     fun map(emailAddress: EditText?) {
@@ -28,7 +28,7 @@ class EmailEditText {
                 .debounce(400, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
-                    // display message -- toast
+                    toast?.invoke("debounced 400")
                 }
         }
     }

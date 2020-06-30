@@ -4,4 +4,5 @@
     <string name="title_timer">Timer</string>
     <string name="title_username">Username</string>
     <string name="title_password">Password</string>
+    <string name="btn_login">Login</string>
 </resources>

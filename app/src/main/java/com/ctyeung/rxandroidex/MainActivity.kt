@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.Gravity
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.ctyeung.rxandroidex.databinding.ActivityMainBinding
@@ -28,11 +29,15 @@ class MainActivity : AppCompatActivity() {
         tryDebounce()
     }
 
+    fun onClickLogin() {
+
+    }
+
     fun tryDebounce() {
 
         var refresh : (String) -> Unit = {
-                email: String ->
-            binding?.txtEmail.text = email
+                msg: String ->
+            showToast(msg)
         }
 
         var task = EmailEditText(refresh)
@@ -51,8 +56,6 @@ class MainActivity : AppCompatActivity() {
 //                                       before: Int, count: Int) {
 //            }
 //        })
-
-
 
     fun onClickTimer() {
         try {
@@ -74,7 +77,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         catch(ex: Exception) {
-            Toast.makeText(this, "tryTimer() $ex", Toast.LENGTH_LONG).show()
+            showToast("tryTimer() $ex")
         }
     }
 
@@ -90,7 +93,13 @@ class MainActivity : AppCompatActivity() {
             request.getUsers()
         }
         catch(ex:Exception) {
-            Toast.makeText(this, "TryRxRetrofit() $ex", Toast.LENGTH_LONG).show()
+            showToast("TryRxRetrofit() $ex")
         }
+    }
+
+    fun showToast(msg:String) {
+        var toast = Toast.makeText(this, msg, Toast.LENGTH_LONG)
+        toast.setGravity(Gravity.TOP or Gravity.CENTER, 0, 0)
+        toast.show()
     }
 }
