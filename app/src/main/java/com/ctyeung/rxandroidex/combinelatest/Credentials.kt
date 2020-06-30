@@ -41,14 +41,14 @@ class Credentials {
 //                        }
 //                    })
 
-            val passwordObservable: Observable<String> =
-                RxTextView.textChanges(password).skip(1)
-                    .map(object : Function<CharSequence?, String?>() {
-                        @Throws(java.lang.Exception::class)
-                        fun apply(charSequence: CharSequence): String? {
-                            return charSequence.toString()
-                        }
-                    })
+//            val passwordObservable: Observable<String> =
+//                RxTextView.textChanges(password).skip(1)
+//                    .map(object : Function<CharSequence?, String?>() {
+//                        @Throws(java.lang.Exception::class)
+//                        fun apply(charSequence: CharSequence): String? {
+//                            return charSequence.toString()
+//                        }
+//                    })
 
 //            observable = Observable.combineLatest(
 //                nameObservable,
@@ -89,5 +89,4 @@ class Credentials {
     fun destroy() {
 
     }
-}
 }
