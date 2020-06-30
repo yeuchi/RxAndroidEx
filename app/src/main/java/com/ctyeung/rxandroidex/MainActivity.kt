@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.layout = this
 
-        tryMap()
+        tryFlatmap()
     }
 
     fun tryMap() {
@@ -45,13 +45,29 @@ class MainActivity : AppCompatActivity() {
             showToast("action: ${msg}")
         }
 
-        var refresh : (String) -> Unit = {
-                msg: String ->
+        var refresh : (String?) -> Unit = {
+                msg: String? ->
             showToast("refresh: ${msg}")
         }
 
         var transform = TransformStuff(refresh, action)
         transform.map()
+    }
+
+    fun tryFlatmap() {
+
+        var action : (String) -> Unit = {
+                msg: String ->
+            showToast("action: ${msg}")
+        }
+
+        var refresh : (String?) -> Unit = {
+                msg: String? ->
+            showToast("refresh: ${msg}")
+        }
+
+        var transform = TransformStuff(refresh, action)
+        transform.flatmap()
     }
 
     fun onClickLogin() {
