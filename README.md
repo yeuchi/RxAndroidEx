@@ -7,6 +7,11 @@ Secondary principle: define onError(), cancel -> unsubscribe()
 ## User Interface
 <img width="584" src="https://user-images.githubusercontent.com/1282659/85935215-f65a6f00-b8b3-11ea-8724-25952f1bb77a.jpg">
 
+## Debounce
+
+## Map, FlatMap
+Thanks to mt.uulu <sup>[4]</sup> on Stack overflow for the sample code.
+
 ## Timer
 Thanks to Gabriel's article <sup>[2]</sup> for demonstrating how to create a linear timer task with RxJava.
 
@@ -31,3 +36,6 @@ https://medium.com/@gabrieldemattosleon/fundamentals-of-rxjava-with-kotlin-for-a
 
 3. RxBinding by Jake Wharton, Jan 29, 2018 \
 https://github.com/JakeWharton/RxBinding
+
+4. When do you use map vs flatMap in RxJava? \
+https://stackoverflow.com/questions/22847105/when-do-you-use-map-vs-flatmap-in-rxjava
