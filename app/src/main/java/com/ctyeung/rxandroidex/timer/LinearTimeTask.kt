@@ -18,11 +18,9 @@ class LinearTimeTask {
     }
 
     fun startInterval() {
-
         disposable = Observable.interval(1000, TimeUnit.MILLISECONDS)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(this::onHandleResponse)
-         //   .subscribe { println("Result we just received: $it") }
     }
 
     private fun onHandleResponse(time:Long) {

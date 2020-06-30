@@ -2,11 +2,16 @@ package com.ctyeung.rxandroidex
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.ctyeung.rxandroidex.databinding.ActivityMainBinding
+import com.ctyeung.rxandroidex.debounce.EmailEditText
 import com.ctyeung.rxandroidex.network_retrofit.RequestsRetrofit
 import com.ctyeung.rxandroidex.timer.LinearTimeTask
+import com.jakewharton.rxbinding2.widget.RxTextView
+import io.reactivex.Observable
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +24,34 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.layout = this
+
+        tryDebounce()
     }
+
+    fun tryDebounce() {
+
+        var refresh : (String) -> Unit = {
+                email: String ->
+            binding?.txtEmail.text = email
+        }
+
+        var task = EmailEditText(refresh)
+        task.map(binding?.editEmail)
+    }
+
+//        binding.editMap.addTextChangedListener(object : TextWatcher {
+//
+//            override fun afterTextChanged(s: Editable) {}
+//
+//            override fun beforeTextChanged(s: CharSequence, start: Int,
+//                                           count: Int, after: Int) {
+//            }
+//
+//            override fun onTextChanged(s: CharSequence, start: Int,
+//                                       before: Int, count: Int) {
+//            }
+//        })
+
 
     fun onClickTimer() {
         try {
@@ -32,7 +64,6 @@ class MainActivity : AppCompatActivity() {
                 else -> {
                     var refresh : (String) -> Unit = {
                             count: String ->
-                        val c = count
                         binding?.txtTimerCount.text = count
                     }
 

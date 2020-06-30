@@ -6,7 +6,7 @@ import io.reactivex.schedulers.Schedulers
 
 class RequestsRetrofit {
     var startTime:Long = System.currentTimeMillis()
-    open var refresh:((String, String)->Unit)? = null
+    var refresh:((String, String)->Unit)? = null
     var list:List<User>?=null
     var myCompositeDisposable = CompositeDisposable()
 

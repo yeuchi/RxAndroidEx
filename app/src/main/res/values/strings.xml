@@ -2,4 +2,6 @@
     <string name="app_name">RxAndroidEx</string>
     <string name="title_rxretrofit">Retrofit</string>
     <string name="title_timer">Timer</string>
+    <string name="title_username">Username</string>
+    <string name="title_password">Password</string>
 </resources>

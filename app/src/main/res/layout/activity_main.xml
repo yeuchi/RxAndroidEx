@@ -24,7 +24,6 @@
             <Button
                 android:layout_width="@dimen/title_width"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
                 android:id="@+id/btnTimer"
                 android:text="@string/title_timer"
                 android:onClick="@{()->layout.onClickTimer()}"/>
@@ -47,7 +46,6 @@
             <Button
                 android:layout_width="@dimen/title_width"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin"
                 android:id="@+id/btnRxRetrofit"
                 android:text="@string/title_rxretrofit"
                 android:onClick="@{()->layout.onClickRetrofit()}"/>
@@ -63,6 +61,90 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txtRxRetrofitElapsed"
                 android:text="0:00"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_margin="@dimen/margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:text="@string/title_username"/>
+
+            <EditText
+                android:layout_width="@dimen/title_width"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:hint="Email address"
+                android:inputType="textEmailAddress"
+                android:id="@+id/editUsername"/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtUsername"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_margin="@dimen/margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:text="@string/title_password"/>
+
+            <EditText
+                android:layout_width="@dimen/title_width"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:hint="Your password"
+                android:inputType="textPassword"
+                android:id="@+id/editPassword"/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtPassword"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_margin="@dimen/margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:text="@string/title_username"/>
+
+            <EditText
+                android:layout_width="@dimen/title_width"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:hint="Email address"
+                android:inputType="textEmailAddress"
+                android:id="@+id/editEmail"/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtEmail"
+                android:text=""/>
 
         </LinearLayout>
 
