@@ -24,7 +24,7 @@ class LinearTimeTask {
     }
 
     private fun onHandleResponse(time:Long) {
-        val timeString = time.toString() + "ms"
+        val timeString = time.toString()
         this.refresh?.invoke(timeString)
     }
 
