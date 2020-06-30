@@ -10,7 +10,7 @@ Secondary principle: define onError(), cancel -> unsubscribe()
 ## Debounce
 
 ## Map, FlatMap
-Thanks to mt.uulu <sup>[4]</sup> on Stack overflow for the sample code.
+Thanks to mt.uulu <sup>[4]</sup> on Stack overflow for the sample code. \
 <img width="336" alt="Screen Shot 2020-06-30 at 4 59 06 PM" src="https://user-images.githubusercontent.com/67604278/86181114-0e6c0180-baf3-11ea-8d4a-17d01d5f9a32.png">
 
 ## Timer
