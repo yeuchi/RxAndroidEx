@@ -8,6 +8,7 @@ Secondary principle: define onError(), cancel -> unsubscribe()
 <img width="584" src="https://user-images.githubusercontent.com/1282659/85935215-f65a6f00-b8b3-11ea-8724-25952f1bb77a.jpg">
 
 ## Debounce
+Thanks to Jessica's article <sup>[5]</sup> and demo code. 
 
 ## Map, FlatMap
 Thanks to mt.uulu <sup>[4]</sup> on Stack overflow for the sample code. \
@@ -40,3 +41,6 @@ https://github.com/JakeWharton/RxBinding
 
 4. When do you use map vs flatMap in RxJava? \
 https://stackoverflow.com/questions/22847105/when-do-you-use-map-vs-flatmap-in-rxjava
+
+5. Kotlin Reactive Programming for an Android Sign-Up Screen by Jessica Thorns, 6 Aug 2018 \
+https://code.tutsplus.com/tutorials/kotlin-reactive-programming-for-an-android-sign-up-screen--cms-31585
