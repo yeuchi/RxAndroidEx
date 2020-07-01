@@ -5,4 +5,6 @@
     <string name="title_username">Username</string>
     <string name="title_password">Password</string>
     <string name="btn_login">Login</string>
+    <string name="btn_map">Map</string>
+    <string name="btn_flatmap">Flatmap</string>
 </resources>

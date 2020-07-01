@@ -11,7 +11,6 @@ import java.util.concurrent.TimeUnit
  */
 class EmailEditText {
     var toast:((String)->Unit)? = null
-    var observable: Observable<Boolean>? = null
     var emailAddress: EditText? = null
 
     constructor(refresh:((String)->Unit)?=null) {

@@ -48,8 +48,5 @@ class TransformStuff {
             ).subscribe(Consumer<String> { s: String? ->
                 refresh?.invoke(s)
             })
-//            ).subscribe(Consumer<String> { s: String? ->
-//                println(s)
-//            })
     }
 }

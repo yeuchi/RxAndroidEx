@@ -34,27 +34,25 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.layout = this
-
-        tryFlatmap()
     }
 
-    fun tryMap() {
+    fun onClickMap() {
 
         var action : (String) -> Unit = {
                 msg: String ->
-            showToast("action: ${msg}")
+            binding?.txtMapAction.text = "action: ${msg}"
         }
 
         var refresh : (String?) -> Unit = {
                 msg: String? ->
-            showToast("refresh: ${msg}")
+            binding?.txtMapResult.text = "result: ${msg}"
         }
 
         var transform = TransformStuff(refresh, action)
         transform.map()
     }
 
-    fun tryFlatmap() {
+    fun onClickFlatmap() {
 
         var action : (String) -> Unit = {
                 msg: String ->
@@ -74,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun tryDebounce() {
+    fun onClickDebounce() {
 
         var refresh : (String) -> Unit = {
                 msg: String ->
@@ -84,19 +82,6 @@ class MainActivity : AppCompatActivity() {
         var task = EmailEditText(refresh)
         task.map(binding?.editEmail)
     }
-
-//        binding.editMap.addTextChangedListener(object : TextWatcher {
-//
-//            override fun afterTextChanged(s: Editable) {}
-//
-//            override fun beforeTextChanged(s: CharSequence, start: Int,
-//                                           count: Int, after: Int) {
-//            }
-//
-//            override fun onTextChanged(s: CharSequence, start: Int,
-//                                       before: Int, count: Int) {
-//            }
-//        })
 
     fun onClickTimer() {
         try {

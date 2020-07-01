@@ -121,6 +121,13 @@
             android:layout_margin="@dimen/margin"
             android:orientation="horizontal">
 
+            <Button
+                android:layout_width="@dimen/title_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnDebounce"
+                android:text="@string/title_timer"
+                android:onClick="@{()->layout.onClickDebounce()}"/>
+
             <EditText
                 android:layout_width="@dimen/email_width"
                 android:layout_height="wrap_content"
@@ -133,6 +140,35 @@
                 android:layout_width="@dimen/size_width"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtEmail"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <!-- Try Map -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_margin="@dimen/margin"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="@dimen/title_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnMap"
+                android:text="@string/title_timer"
+                android:onClick="@{()->layout.onClickMap()}"/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtMapAction"
+                android:text=""/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtMapResult"
                 android:text=""/>
 
         </LinearLayout>
