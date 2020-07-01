@@ -5,14 +5,14 @@ Primary principle: Observable -> Observer + Scheduler \
 Secondary principle: define onError(), cancel -> unsubscribe()
 
 ## User Interface
-<img width="584" src="https://user-images.githubusercontent.com/1282659/85935215-f65a6f00-b8b3-11ea-8724-25952f1bb77a.jpg">
+<img width="584" src="https://user-images.githubusercontent.com/67604278/86283066-f608ef00-bba5-11ea-9188-c5cdc1cec57e.png">
 
 ## Debounce
 Thanks to Jessica's article <sup>[5]</sup> and demo code. 
 
 ## Map, FlatMap
 Thanks to mt.uulu <sup>[4]</sup> on Stack overflow for the sample code. \
-<img width="336" alt="Screen Shot 2020-06-30 at 4 59 06 PM" src="https://user-images.githubusercontent.com/67604278/86181114-0e6c0180-baf3-11ea-8d4a-17d01d5f9a32.png">
+<img width="220" alt="Screen Shot 2020-06-30 at 4 59 06 PM" src="https://user-images.githubusercontent.com/67604278/86181114-0e6c0180-baf3-11ea-8d4a-17d01d5f9a32.png">
 
 ## Timer
 Thanks to Gabriel's article <sup>[2]</sup> for demonstrating how to create a linear timer task with RxJava.
