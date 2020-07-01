@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         var task = EmailEditText(refresh)
-        task.map(binding?.editEmail)
+        task.debounce(binding?.editEmail)
     }
 
     /*

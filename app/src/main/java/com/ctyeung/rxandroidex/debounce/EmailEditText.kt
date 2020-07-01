@@ -13,18 +13,22 @@ class EmailEditText {
     var toast:((String)->Unit)? = null
     var emailAddress: EditText? = null
 
+    companion object {
+        val PERIOD:Long = 400
+    }
+
     constructor(refresh:((String)->Unit)?=null) {
         this.toast = refresh
     }
 
-    fun map(emailAddress: EditText?) {
+    fun debounce(emailAddress: EditText?) {
         this.emailAddress = emailAddress
 
         if(emailAddress!=null) {
 
             RxTextView.afterTextChangeEvents(emailAddress)
                 .skipInitialValue()
-                .debounce(400, TimeUnit.MILLISECONDS)
+                .debounce(PERIOD, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
                     toast?.invoke("debounced 400")
