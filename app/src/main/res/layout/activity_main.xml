@@ -125,7 +125,7 @@
                 android:layout_width="@dimen/title_width"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnDebounce"
-                android:text="@string/title_timer"
+                android:text="@string/btn_debounce"
                 android:onClick="@{()->layout.onClickDebounce()}"/>
 
             <EditText
@@ -156,7 +156,7 @@
                 android:layout_width="@dimen/title_width"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnMap"
-                android:text="@string/title_timer"
+                android:text="@string/btn_map"
                 android:onClick="@{()->layout.onClickMap()}"/>
 
             <TextView
@@ -169,6 +169,35 @@
                 android:layout_width="@dimen/size_width"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtMapResult"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <!-- Try FlatMap -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_margin="@dimen/margin"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="@dimen/title_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnFlatMap"
+                android:text="@string/btn_flatmap"
+                android:onClick="@{()->layout.onClickFlatmap()}"/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtFlatmapAction"
+                android:text=""/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtFlatmapResult"
                 android:text=""/>
 
         </LinearLayout>

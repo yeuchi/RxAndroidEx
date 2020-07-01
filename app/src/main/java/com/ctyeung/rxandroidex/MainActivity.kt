@@ -16,14 +16,6 @@ import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.Observable
 import java.lang.Exception
 
-/*
- * per Brad's suggestion:
- * - flatmap, map
- * - zip, zipwith
- * - chaining
- * - filter
- *
- */
 class MainActivity : AppCompatActivity() {
     lateinit var binding:ActivityMainBinding
     var timer:LinearTimeTask?=null
@@ -36,6 +28,9 @@ class MainActivity : AppCompatActivity() {
         binding.layout = this
     }
 
+    /*
+     * 1 -> 1 transform
+     */
     fun onClickMap() {
 
         var action : (String) -> Unit = {
@@ -52,26 +47,35 @@ class MainActivity : AppCompatActivity() {
         transform.map()
     }
 
+    /*
+     * 1 -> N async transform
+     */
     fun onClickFlatmap() {
 
         var action : (String) -> Unit = {
                 msg: String ->
-            showToast("action: ${msg}")
+            binding?.txtFlatmapAction.text = "action: ${msg}"
         }
 
         var refresh : (String?) -> Unit = {
                 msg: String? ->
-            showToast("refresh: ${msg}")
+            binding?.txtFlatmapResult.text = "result: ${msg}"
         }
 
         var transform = TransformStuff(refresh, action)
         transform.flatmap()
     }
 
+    /*
+     * N -> 1 : CombineLast
+     */
     fun onClickLogin() {
 
     }
 
+    /*
+     * wait N seconds and execute last (not priors)
+     */
     fun onClickDebounce() {
 
         var refresh : (String) -> Unit = {
@@ -83,6 +87,9 @@ class MainActivity : AppCompatActivity() {
         task.map(binding?.editEmail)
     }
 
+    /*
+     * replace timer with Rx operator
+     */
     fun onClickTimer() {
         try {
             when {
