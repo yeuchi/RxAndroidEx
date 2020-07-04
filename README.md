@@ -7,23 +7,29 @@ Secondary principle: define onError(), cancel -> unsubscribe()
 ## User Interface
 <img width="220" src="https://user-images.githubusercontent.com/67604278/86283066-f608ef00-bba5-11ea-9188-c5cdc1cec57e.png">
 
-## CombineLast - Credentials
-Similar operators are merge, join, groupJoin.
-Emits to observer only when both observables have intial change.
-Use map operators for each observable to validate or transform new input.
+## CombineLast
+Operator is used for enabling the Login button when credential, username and passwords are valid. \
+Similar operators are merge, join, groupJoin. \
+Emits to observer only when both observables have intial change. \
+Use map operators for each observable to validate or transform new input. \
 Thanks to articles by Anupam <sup>[7]</sup> and Anitaa <sup>[6]</sup>.
 
-## Debounce - Wait N seconds
+## Debounce 
+Operator waits N seconds and emit last to observer.
 Thanks to Jessica's article <sup>[5]</sup> and demo code. 
 
-## Map, FlatMap - transform or validate data
+## Map, FlatMap 
+Operators are good for data transform; validation is one example where a boolean result is the output. \
+FlatMap has the additional feature of 1 to N relationship. \
 Thanks to mt.uulu <sup>[4]</sup> on Stack overflow for the sample code. \
 <img width="350" alt="Screen Shot 2020-06-30 at 4 59 06 PM" src="https://user-images.githubusercontent.com/67604278/86181114-0e6c0180-baf3-11ea-8d4a-17d01d5f9a32.png">
 
 ## Timer
+Operator is an alternative to a timer function.
 Thanks to Gabriel's article <sup>[2]</sup> for demonstrating how to create a linear timer task with RxJava.
 
 ## RetroFit + RxAndroid
+Async operation with RxAndroid. \
 Thanks to Jessica Thornsby article <sup>[6]</sup> for the operators. \
 Identical code as those in NetworkRequestKotlin exercise, working with RxJava library. \
 https://github.com/yeuchi/NetworkRequestsKotlin/blob/master/README.md \
