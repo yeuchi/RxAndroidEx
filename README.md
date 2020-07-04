@@ -7,10 +7,16 @@ Secondary principle: define onError(), cancel -> unsubscribe()
 ## User Interface
 <img width="220" src="https://user-images.githubusercontent.com/67604278/86283066-f608ef00-bba5-11ea-9188-c5cdc1cec57e.png">
 
-## Debounce
+## CombineLast - Credentials
+Similar operators are merge, join, groupJoin.
+Emits to observer only when both observables have intial change.
+Use map operators for each observable to validate or transform new input.
+Thanks to articles by Anupam <sup>[7]</sup> and Anitaa <sup>[6]</sup>.
+
+## Debounce - Wait N seconds
 Thanks to Jessica's article <sup>[5]</sup> and demo code. 
 
-## Map, FlatMap
+## Map, FlatMap - transform or validate data
 Thanks to mt.uulu <sup>[4]</sup> on Stack overflow for the sample code. \
 <img width="350" alt="Screen Shot 2020-06-30 at 4 59 06 PM" src="https://user-images.githubusercontent.com/67604278/86181114-0e6c0180-baf3-11ea-8d4a-17d01d5f9a32.png">
 
@@ -44,3 +50,9 @@ https://stackoverflow.com/questions/22847105/when-do-you-use-map-vs-flatmap-in-r
 
 5. Kotlin Reactive Programming for an Android Sign-Up Screen by Jessica Thorns, 6 Aug 2018 \
 https://code.tutsplus.com/tutorials/kotlin-reactive-programming-for-an-android-sign-up-screen--cms-31585
+
+6. Exploring RxJava in Android — Operators for Combining Observables by Anitaa Murthy, August 19, 2018
+https://proandroiddev.com/exploring-rxjava-in-android-operators-for-combining-observables-25734080f4be
+
+7. RxJava combineLatest, withLatestFrom by Anupam Chugh, JournalDev, 2018-08-07
+https://www.journaldev.com/22605/rxjava-combinelatest-withlatestfrom
