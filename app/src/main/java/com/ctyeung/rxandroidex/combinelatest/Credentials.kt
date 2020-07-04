@@ -6,19 +6,23 @@ import io.reactivex.Observable
 import io.reactivex.functions.BiFunction
 
 /*
+ * CombineLast - similar to merge but emits only when each observable has changed at least once.
+ *
+ * References
  * https://medium.com/mindorks/android-form-validation-with-rxjava-3a8673886101
+ * https://proandroiddev.com/exploring-rxjava-in-android-operators-for-combining-observables-25734080f4be
  */
 class Credentials {
-    var refresh:((String)->Unit)? = null
-    var observable: Observable<Boolean>? = null
+    var enableButton:((String)->Unit)? = null
+
     var username: EditText? = null
     var password: EditText? = null
 
-    constructor(refresh:((String)->Unit)?=null) {
-        this.refresh = refresh
+    constructor(enableButton:((String)->Unit)?=null) {
+        this.enableButton = enableButton
     }
 
-    fun map(username: EditText?, password: EditText?) {
+    fun combineLast(username: EditText?, password: EditText?) {
         this.username = username
         this.password = password
 
@@ -36,18 +40,23 @@ class Credentials {
                 passwordObservable,
                 BiFunction { observable1Times: Any, observable2Times: Any -> "Refreshed Observable1: $observable1Times refreshed Observable2: $observable2Times" }
             )
-                .subscribe { item: String? ->
-                    println(
-                        item
-                    )
-                }
+                .subscribe { item: String? -> onHandleResult(item) }
         }
     }
 
     private fun doTranform(str: CharSequence): String? {
-        return null
+        // validate string here ?
+        return str.toString()
     }
 
+    private fun onHandleResult(item:String?) {
+        // enable button here
+        var str = ""
+        if(item != null)
+            str = item
+
+        enableButton?.invoke(str)
+    }
 
     fun destroy() {
 

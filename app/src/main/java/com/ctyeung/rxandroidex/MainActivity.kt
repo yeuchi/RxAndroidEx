@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.view.Gravity
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import com.ctyeung.rxandroidex.combinelatest.Credentials
 import com.ctyeung.rxandroidex.databinding.ActivityMainBinding
 import com.ctyeung.rxandroidex.debounce.EmailEditText
 import com.ctyeung.rxandroidex.maps.TransformStuff
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.layout = this
+
+        initCredentials()
     }
 
     /*
@@ -71,6 +74,16 @@ class MainActivity : AppCompatActivity() {
      */
     fun onClickLogin() {
 
+    }
+
+    fun initCredentials() {
+        var enableButton : (String) -> Unit = {
+                msg: String ->
+
+            binding?.btnLogin.isEnabled = true
+        }
+        var cred = Credentials(enableButton)
+        cred.combineLast(binding?.editUsername, binding?.editPassword)
     }
 
     /*

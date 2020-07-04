@@ -105,8 +105,10 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/btnLogin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:enabled="false"
                     android:text="@string/btn_login"
                     android:onClick="@{()->layout.onClickLogin()}"/>
 
