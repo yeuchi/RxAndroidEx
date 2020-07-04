@@ -8,4 +8,5 @@
     <string name="btn_map">Map</string>
     <string name="btn_flatmap">Flatmap</string>
     <string name="btn_debounce">Debounce</string>
+    <string name="txt_invalid">invalid</string>
 </resources>

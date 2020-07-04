@@ -14,12 +14,18 @@ import io.reactivex.functions.BiFunction
  */
 class Credentials {
     var enableButton:((Boolean)->Unit)? = null
+    var alertUsername:((Boolean)->Unit)? = null
+    var alertPassword:((Boolean)->Unit)? = null
 
     var username: EditText? = null
     var password: EditText? = null
 
-    constructor(enableButton:((Boolean)->Unit)?=null) {
+    constructor(alertUsername:((Boolean)->Unit)?=null,
+                alerPassword:((Boolean)->Unit)?=null,
+                enableButton:((Boolean)->Unit)?=null) {
         this.enableButton = enableButton
+        this.alertUsername = alertUsername
+        this.alertPassword = alertPassword
     }
 
     fun combineLast(username: EditText?, password: EditText?) {
@@ -47,20 +53,28 @@ class Credentials {
     private fun isValidUsername(str: CharSequence): Boolean {
         // validate string here ?
         val MIN_CHARACTERS = 7
-        if(str.length >= MIN_CHARACTERS)
-            return true
-        else
-            return false
+        var isValid = false
+
+        if(str.length >= MIN_CHARACTERS) {
+            isValid = true
+        }
+
+        this.alertUsername?.invoke(isValid)
+        return isValid
     }
 
     private fun isValidPassword(str: CharSequence): Boolean {
         val MIN_CHARACTERS = 7
         val PASSWORD ="password"
+        var isValid = false
+
         if(str.length >= MIN_CHARACTERS &&
-            !str.equals(PASSWORD))
-            return true
-        else
-            return false
+            !str.equals(PASSWORD)) {
+            isValid = true
+        }
+
+        this.alertPassword?.invoke(isValid)
+        return isValid
     }
 
     private fun onHandleResult(list:List<Any>) {

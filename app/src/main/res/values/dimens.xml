@@ -4,6 +4,7 @@
     <dimen name="size_width">80dp</dimen>
     <dimen name="email_width">200dp</dimen>
     <dimen name="margin">10dp</dimen>
+    <dimen name="cred_left_margin">10dp</dimen>
 
 </resources>
 

@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.Gravity
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.ctyeung.rxandroidex.combinelatest.Credentials
@@ -73,15 +75,35 @@ class MainActivity : AppCompatActivity() {
      * N -> 1 : CombineLast
      */
     fun onClickLogin() {
-
+        showToast("Go Authentication")
     }
 
     fun initCredentials() {
+
+        fun getVisibility(isValid:Boolean):Int {
+            var visibility = TextView.VISIBLE
+
+            if (isValid)
+                visibility = TextView.INVISIBLE
+
+            return visibility
+        }
+
+        var alertUsername : (Boolean) -> Unit = {
+                isValid:Boolean ->
+                binding?.txtUsernameWarning.visibility = getVisibility(isValid)
+        }
+
+        var alertPassword : (Boolean) -> Unit = {
+                isValid:Boolean ->
+                binding?.txtPasswordWarning.visibility = getVisibility(isValid)
+        }
+
         var enableButton : (Boolean) -> Unit = {
             enabled:Boolean ->
             binding?.btnLogin.isEnabled = enabled
         }
-        var cred = Credentials(enableButton)
+        var cred = Credentials(alertUsername, alertPassword, enableButton)
         cred.combineLast(binding?.editUsername, binding?.editPassword)
     }
 
