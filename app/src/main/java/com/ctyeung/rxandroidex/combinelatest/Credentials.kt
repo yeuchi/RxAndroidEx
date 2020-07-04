@@ -13,12 +13,12 @@ import io.reactivex.functions.BiFunction
  * https://proandroiddev.com/exploring-rxjava-in-android-operators-for-combining-observables-25734080f4be
  */
 class Credentials {
-    var enableButton:((String)->Unit)? = null
+    var enableButton:((Boolean)->Unit)? = null
 
     var username: EditText? = null
     var password: EditText? = null
 
-    constructor(enableButton:((String)->Unit)?=null) {
+    constructor(enableButton:((Boolean)->Unit)?=null) {
         this.enableButton = enableButton
     }
 
@@ -28,34 +28,50 @@ class Credentials {
 
         if(username!=null && password!=null) {
 
-            val nameObservable: Observable<String> =
+            val nameObservable: Observable<Boolean> =
                 RxTextView.textChanges(username).skip(1)
-                    .map({str -> doTranform(str)})
+                    .map({str -> isValidUsername(str)})
 
-            val passwordObservable: Observable<String> =
+            val passwordObservable: Observable<Boolean> =
                 RxTextView.textChanges(password).skip(1)
-                    .map({str -> doTranform(str)})
+                    .map({str -> isValidPassword(str)})
 
             Observable.combineLatest(nameObservable,
                 passwordObservable,
-                BiFunction { observable1Times: Any, observable2Times: Any -> "Refreshed Observable1: $observable1Times refreshed Observable2: $observable2Times" }
+                BiFunction { observable1Times: Any, observable2Times: Any -> listOf(observable1Times, observable2Times) }
             )
-                .subscribe { item: String? -> onHandleResult(item) }
+                .subscribe { item: List<Any> -> onHandleResult(item) }
         }
     }
 
-    private fun doTranform(str: CharSequence): String? {
+    private fun isValidUsername(str: CharSequence): Boolean {
         // validate string here ?
-        return str.toString()
+        val MIN_CHARACTERS = 7
+        if(str.length >= MIN_CHARACTERS)
+            return true
+        else
+            return false
     }
 
-    private fun onHandleResult(item:String?) {
-        // enable button here
-        var str = ""
-        if(item != null)
-            str = item
+    private fun isValidPassword(str: CharSequence): Boolean {
+        val MIN_CHARACTERS = 7
+        val PASSWORD ="password"
+        if(str.length >= MIN_CHARACTERS &&
+            !str.equals(PASSWORD))
+            return true
+        else
+            return false
+    }
 
-        enableButton?.invoke(str)
+    private fun onHandleResult(list:List<Any>) {
+        var enable = true
+
+        for(item in list) {
+            if (item == false) {
+                enable = false
+            }
+        }
+        enableButton?.invoke(enable)
     }
 
     fun destroy() {

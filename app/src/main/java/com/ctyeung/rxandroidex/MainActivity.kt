@@ -77,10 +77,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initCredentials() {
-        var enableButton : (String) -> Unit = {
-                msg: String ->
-
-            binding?.btnLogin.isEnabled = true
+        var enableButton : (Boolean) -> Unit = {
+            enabled:Boolean ->
+            binding?.btnLogin.isEnabled = enabled
         }
         var cred = Credentials(enableButton)
         cred.combineLast(binding?.editUsername, binding?.editPassword)
