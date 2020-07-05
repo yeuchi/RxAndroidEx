@@ -62,3 +62,6 @@ https://proandroiddev.com/exploring-rxjava-in-android-operators-for-combining-ob
 
 7. RxJava combineLatest, withLatestFrom by Anupam Chugh, JournalDev, 2018-08-07
 https://www.journaldev.com/22605/rxjava-combinelatest-withlatestfrom
+
+8. Replacing Java Timer with Kotlin Coroutine Timer #1186 by Anggrayudi H anggrayudi, May 13, 2019
+https://github.com/Kotlin/kotlinx.coroutines/issues/1186
