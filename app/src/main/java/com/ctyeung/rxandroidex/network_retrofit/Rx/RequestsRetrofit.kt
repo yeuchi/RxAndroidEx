@@ -1,8 +1,10 @@
-package com.ctyeung.rxandroidex.network_retrofit
+package com.ctyeung.rxandroidex.network_retrofit.Rx
 
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
+import com.ctyeung.rxandroidex.network_retrofit.User
+import com.ctyeung.rxandroidex.network_retrofit.Rx.RetrofitBuilder
 
 class RequestsRetrofit {
     var startTime:Long = System.currentTimeMillis()

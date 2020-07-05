@@ -14,7 +14,6 @@ import com.ctyeung.rxandroidex.combinelatest.Credentials
 import com.ctyeung.rxandroidex.databinding.ActivityMainBinding
 import com.ctyeung.rxandroidex.debounce.EmailEditText
 import com.ctyeung.rxandroidex.maps.TransformStuff
-import com.ctyeung.rxandroidex.network_retrofit.RequestsRetrofit
 import com.ctyeung.rxandroidex.timer.LinearTimeTask
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.Observable

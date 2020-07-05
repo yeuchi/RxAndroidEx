@@ -1,4 +1,4 @@
-package com.ctyeung.rxandroidex.network_retrofit
+package com.ctyeung.rxandroidex.network_retrofit.Rx
 
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

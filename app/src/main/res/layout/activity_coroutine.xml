@@ -14,5 +14,229 @@
         android:gravity="center"
         tools:context=".CoroutineActivity">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_margin="@dimen/margin"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="@dimen/title_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnTimer"
+                android:text="@string/title_timer"
+                android:onClick="@{()->coroutine.onClickTimer()}"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/txtTimerCount"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_margin="@dimen/margin"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="@dimen/title_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnRxRetrofit"
+                android:text="@string/title_rxretrofit"
+                android:onClick="@{()->coroutine.onClickRetrofit()}"/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtRxRetrofitUserCount"
+                android:text="0"/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtRxRetrofitElapsed"
+                android:text="0:00"/>
+
+        </LinearLayout>
+
+        <!-- try combinedLast -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="@dimen/margin"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_margin="@dimen/margin"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="@dimen/title_width"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:hint="Username"
+                        android:inputType="text"
+                        android:id="@+id/editUsername"/>
+
+                    <TextView
+                        android:textColor="@color/colorInvalid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/cred_left_margin"
+                        android:text="@string/txt_invalid"
+                        android:visibility="invisible"
+                        android:id="@+id/txtUsernameWarning"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="@dimen/title_width"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:hint="Your password"
+                        android:inputType="textPassword"
+                        android:id="@+id/editPassword"/>
+
+                    <TextView
+                        android:textColor="@color/colorInvalid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/cred_left_margin"
+                        android:text="@string/txt_invalid"
+                        android:visibility="invisible"
+                        android:id="@+id/txtPasswordWarning"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="@dimen/margin"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text="@string/btn_login"
+                    android:onClick="@{()->coroutine.onClickLogin()}"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Try Debounce -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_margin="@dimen/margin"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="@dimen/title_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnDebounce"
+                android:text="@string/btn_debounce"
+                android:onClick="@{()->coroutine.onClickDebounce()}"/>
+
+            <EditText
+                android:layout_width="@dimen/email_width"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:hint="Email address"
+                android:inputType="textEmailAddress"
+                android:id="@+id/editEmail"/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtEmail"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <!-- Try Map -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_margin="@dimen/margin"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="@dimen/title_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnMap"
+                android:text="@string/btn_map"
+                android:onClick="@{()->coroutine.onClickMap()}"/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtMapAction"
+                android:text=""/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtMapResult"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <!-- Try FlatMap -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_margin="@dimen/margin"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="@dimen/title_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnFlatMap"
+                android:text="@string/btn_flatmap"
+                android:onClick="@{()->coroutine.onClickFlatmap()}"/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtFlatmapAction"
+                android:text=""/>
+
+            <TextView
+                android:layout_width="@dimen/size_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtFlatmapResult"
+                android:text=""/>
+
+        </LinearLayout>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

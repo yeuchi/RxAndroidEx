@@ -11,7 +11,7 @@ import com.ctyeung.rxandroidex.databinding.ActivityMainBinding
 import com.ctyeung.rxandroidex.databinding.ActivityRxKotlinBinding
 import com.ctyeung.rxandroidex.debounce.EmailEditText
 import com.ctyeung.rxandroidex.maps.TransformStuff
-import com.ctyeung.rxandroidex.network_retrofit.RequestsRetrofit
+import com.ctyeung.rxandroidex.network_retrofit.Rx.RequestsRetrofit
 import com.ctyeung.rxandroidex.timer.LinearTimeTask
 import java.lang.Exception
 
