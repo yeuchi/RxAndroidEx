@@ -113,8 +113,8 @@ class CoroutineActivity : AppCompatActivity() {
             showToast(msg)
         }
 
-      //  var task = EmailEditText(refresh)
-      //  task.debounce(binding?.editEmail)
+        var task = EmailEditText(refresh)
+        task.startCoroutineDebounce(binding?.editEmail)
     }
 
     /*

@@ -1,9 +1,15 @@
 package com.ctyeung.rxandroidex.debounce
 
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.EditText
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
 /*
@@ -14,7 +20,7 @@ class EmailEditText {
     var emailAddress: EditText? = null
 
     companion object {
-        val PERIOD:Long = 400
+        val PERIOD:Long = 1000
     }
 
     constructor(refresh:((String)->Unit)?=null) {
@@ -31,22 +37,39 @@ class EmailEditText {
                 .debounce(PERIOD, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
-                    toast?.invoke("debounced 400")
+                    this.toast?.invoke("debounced 400")
                 }
         }
     }
 
-//    fun isValidForm(name: String, password: String): Boolean {
-//        val validName = !name.isEmpty()
-//        if (!validName) {
-//            this.username?.setError("Please enter valid name")
-//        }
-//        val validPass = !password.isEmpty() && password == AppPrefs.getPassword()
-//        if (!validPass) {
-//            this.password?.setError("Incorrect password")
-//        }
-//        return validName && validPass
-//    }
+    fun startCoroutineDebounce(emailAddress: EditText?) {
+        emailAddress?.addTextChangedListener(watcher)
+    }
+
+    val watcher = object :TextWatcher{
+        private var searchFor = ""
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            val searchText = s.toString().trim()
+            if (searchText == searchFor)
+                return
+
+            var scope = CoroutineScope(Dispatchers.Main).launch {
+                delay(PERIOD)  //debounce timeOut
+
+                // do our magic here
+                onHandleResponse(PERIOD)
+            }
+        }
+
+        override fun afterTextChanged(s: Editable?) = Unit
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
+    }
+
+    fun onHandleResponse(time:Long) {
+        val timeString = time.toString()
+        this.toast?.invoke(timeString)
+    }
 
     fun destroy() {
 
