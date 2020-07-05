@@ -21,7 +21,7 @@ class Credentials {
     var password: EditText? = null
 
     constructor(alertUsername:((Boolean)->Unit)?=null,
-                alerPassword:((Boolean)->Unit)?=null,
+                alertPassword:((Boolean)->Unit)?=null,
                 enableButton:((Boolean)->Unit)?=null) {
         this.enableButton = enableButton
         this.alertUsername = alertUsername

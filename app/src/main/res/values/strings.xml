@@ -9,4 +9,13 @@
     <string name="btn_flatmap">Flatmap</string>
     <string name="btn_debounce">Debounce</string>
     <string name="txt_invalid">invalid</string>
+    <string name="btn_rxkotlin">RxKotlin</string>
+    <string name="btn_coroutine">Coroutine</string>
+    <string name="title_activity_rx_kotlin">RxKotlinActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_coroutine">CoroutineActivity</string>
 </resources>
