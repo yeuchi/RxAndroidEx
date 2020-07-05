@@ -15,8 +15,8 @@ Use map operators for each observable to validate or transform new input. \
 Thanks to articles by Anupam <sup>[7]</sup> and Anitaa <sup>[6]</sup>.
 
 ## Debounce 
-Operator waits N seconds and emit last to observer.
-RxKotlin : Thanks to Jessica's article <sup>[5]</sup> and demo code. 
+Operator waits N seconds and emit last to observer. \
+RxKotlin : Thanks to Jessica's article <sup>[5]</sup> and demo code. \
 Coroutine : Thanks to Andriy's article <sup>[9]</sup> for the basics.
 
 ## Map, FlatMap 
