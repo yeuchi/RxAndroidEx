@@ -16,7 +16,8 @@ Thanks to articles by Anupam <sup>[7]</sup> and Anitaa <sup>[6]</sup>.
 
 ## Debounce 
 Operator waits N seconds and emit last to observer.
-Thanks to Jessica's article <sup>[5]</sup> and demo code. 
+RxKotlin : Thanks to Jessica's article <sup>[5]</sup> and demo code. 
+Coroutine : Thanks to Andriy's article <sup>[9]</sup> for the basics.
 
 ## Map, FlatMap 
 Operators are good for data transform; validation is one example where a boolean result is the output. \
