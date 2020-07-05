@@ -26,11 +26,13 @@ Thanks to mt.uulu <sup>[4]</sup> on Stack overflow for the sample code. \
 
 ## Timer
 Operator is an alternative to a timer function.
-Thanks to Gabriel's article <sup>[2]</sup> for demonstrating how to create a linear timer task with RxJava.
+RxKotlin : Thanks to Gabriel's article <sup>[2]</sup> for demonstrating how to create a linear timer task with RxOperator.
+Coroutine : Thanks to Anggrayudi's example <sup>[8]</sup> as starter code.
 
 ## RetroFit + RxAndroid
 Async operation with RxAndroid. \
-Thanks to Jessica Thornsby article <sup>[6]</sup> for the operators. \
+RxKotlin: Thanks to Jessica Thornsby article <sup>[6]</sup> for the operators. \
+Coroutine : Thanks to Paolo's article <sup>[10]</sup> as demo. \
 Identical code as those in NetworkRequestKotlin exercise, working with RxJava library. \
 https://github.com/yeuchi/NetworkRequestsKotlin/blob/master/README.md \
 
@@ -57,11 +59,17 @@ https://stackoverflow.com/questions/22847105/when-do-you-use-map-vs-flatmap-in-r
 5. Kotlin Reactive Programming for an Android Sign-Up Screen by Jessica Thorns, 6 Aug 2018 \
 https://code.tutsplus.com/tutorials/kotlin-reactive-programming-for-an-android-sign-up-screen--cms-31585
 
-6. Exploring RxJava in Android — Operators for Combining Observables by Anitaa Murthy, August 19, 2018
+6. Exploring RxJava in Android — Operators for Combining Observables by Anitaa Murthy, August 19, 2018 \
 https://proandroiddev.com/exploring-rxjava-in-android-operators-for-combining-observables-25734080f4be
 
-7. RxJava combineLatest, withLatestFrom by Anupam Chugh, JournalDev, 2018-08-07
+7. RxJava combineLatest, withLatestFrom by Anupam Chugh, JournalDev, 2018-08-07 \
 https://www.journaldev.com/22605/rxjava-combinelatest-withlatestfrom
 
-8. Replacing Java Timer with Kotlin Coroutine Timer #1186 by Anggrayudi H anggrayudi, May 13, 2019
+8. Replacing Java Timer with Kotlin Coroutine Timer #1186 by Anggrayudi H anggrayudi, May 13, 2019 \
 https://github.com/Kotlin/kotlinx.coroutines/issues/1186
+
+9. EditText debounce with Kotlin coroutines by Andriy Antonov, September 11, 2018 \
+https://medium.com/@pro100svitlo/edittext-debounce-with-kotlin-coroutines-fd134d54f4e9
+
+10. Suspend what you’re doing: Retrofit has now Coroutines support! by Paolo Rotolo, June 27, 2019 \
+https://proandroiddev.com/suspend-what-youre-doing-retrofit-has-now-coroutines-support-c65bd09ba067
