@@ -5,7 +5,7 @@ Primary principle: Observable -> Observer + Scheduler \
 Secondary principle: define onError(), cancel -> unsubscribe()
 
 ## User Interface
-<img width="220" src="https://user-images.githubusercontent.com/67604278/86283066-f608ef00-bba5-11ea-9188-c5cdc1cec57e.png">
+<img width="220" src="https://user-images.githubusercontent.com/1282659/86539410-c0277b80-bec1-11ea-87a6-52d550e67fb2.jpg">
 
 ## CombineLast
 Operator is used for enabling the Login button when credential, username and passwords are valid. \
