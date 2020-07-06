@@ -6,13 +6,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.ctyeung.rxandroidex.combinelatest.Credentials
 import com.ctyeung.rxandroidex.databinding.ActivityCoroutineBinding
-import com.ctyeung.rxandroidex.databinding.ActivityCoroutineBindingImpl
 import com.ctyeung.rxandroidex.debounce.EmailEditText
-import com.ctyeung.rxandroidex.maps.TransformStuff
 import com.ctyeung.networkrequestex.network_retrofit.coroutine.RequestsRetrofit
-import com.ctyeung.rxandroidex.combinelatest.CoroutineCredentials
+import com.ctyeung.rxandroidex.combinelatest.Credentials
 import com.ctyeung.rxandroidex.timer.LinearTimeTask
 import java.lang.Exception
 
@@ -100,7 +97,7 @@ class CoroutineActivity : AppCompatActivity() {
                 enabled:Boolean ->
             binding?.btnLogin.isEnabled = enabled
         }
-        var cred = CoroutineCredentials(alertUsername, alertPassword, enableButton)
+        var cred = Credentials(alertUsername, alertPassword, enableButton)
         cred.combine(binding?.editUsername, binding?.editPassword)
     }
 

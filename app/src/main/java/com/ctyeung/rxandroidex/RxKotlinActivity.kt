@@ -6,8 +6,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.ctyeung.rxandroidex.combinelatest.Credentials
-import com.ctyeung.rxandroidex.databinding.ActivityMainBinding
+import com.ctyeung.rxandroidex.combinelatest.RxCredentials
 import com.ctyeung.rxandroidex.databinding.ActivityRxKotlinBinding
 import com.ctyeung.rxandroidex.debounce.EmailEditText
 import com.ctyeung.rxandroidex.maps.TransformStuff
@@ -99,7 +98,7 @@ class RxKotlinActivity : AppCompatActivity() {
                 enabled:Boolean ->
             binding?.btnLogin.isEnabled = enabled
         }
-        var cred = Credentials(alertUsername, alertPassword, enableButton)
+        var cred = RxCredentials(alertUsername, alertPassword, enableButton)
         cred.combineLast(binding?.editUsername, binding?.editPassword)
     }
 
