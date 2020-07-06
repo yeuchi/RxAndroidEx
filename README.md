@@ -10,8 +10,9 @@ Secondary principle: define onError(), cancel -> unsubscribe()
 ## CombineLast
 Operator is used for enabling the Login button when credential, username and passwords are valid. \
 Similar operators are merge, join, groupJoin. \
-Emits to observer only when both observables have intial change. \
+RxKotlin : Emits to observer only when both observables have intial change. \
 Use map operators for each observable to validate or transform new input. \
+Coroutine : Why do I need coroutine ? \
 Thanks to articles by Anupam <sup>[7]</sup> and Anitaa <sup>[6]</sup>.
 
 ## Debounce 
