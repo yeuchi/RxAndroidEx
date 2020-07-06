@@ -12,13 +12,7 @@ import io.reactivex.functions.BiFunction
  * https://medium.com/mindorks/android-form-validation-with-rxjava-3a8673886101
  * https://proandroiddev.com/exploring-rxjava-in-android-operators-for-combining-observables-25734080f4be
  */
-class Credentials {
-    var enableButton:((Boolean)->Unit)? = null
-    var alertUsername:((Boolean)->Unit)? = null
-    var alertPassword:((Boolean)->Unit)? = null
-
-    var username: EditText? = null
-    var password: EditText? = null
+class Credentials : BaseCredentials {
 
     constructor(alertUsername:((Boolean)->Unit)?=null,
                 alertPassword:((Boolean)->Unit)?=null,
@@ -48,47 +42,5 @@ class Credentials {
             )
                 .subscribe { item: List<Any> -> onHandleResult(item) }
         }
-    }
-
-    private fun isValidUsername(str: CharSequence): Boolean {
-        // validate string here ?
-        val MIN_CHARACTERS = 7
-        var isValid = false
-
-        if(str.length >= MIN_CHARACTERS) {
-            isValid = true
-        }
-
-        this.alertUsername?.invoke(isValid)
-        return isValid
-    }
-
-    private fun isValidPassword(str: CharSequence): Boolean {
-        val MIN_CHARACTERS = 7
-        val PASSWORD ="password"
-        var isValid = false
-
-        if(str.length >= MIN_CHARACTERS &&
-            !str.equals(PASSWORD)) {
-            isValid = true
-        }
-
-        this.alertPassword?.invoke(isValid)
-        return isValid
-    }
-
-    private fun onHandleResult(list:List<Any>) {
-        var enable = true
-
-        for(item in list) {
-            if (item == false) {
-                enable = false
-            }
-        }
-        enableButton?.invoke(enable)
-    }
-
-    fun destroy() {
-
     }
 }

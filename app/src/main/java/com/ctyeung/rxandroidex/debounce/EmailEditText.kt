@@ -70,8 +70,4 @@ class EmailEditText {
         val timeString = time.toString()
         this.toast?.invoke(timeString)
     }
-
-    fun destroy() {
-
-    }
 }

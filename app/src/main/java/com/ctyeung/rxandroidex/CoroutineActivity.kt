@@ -12,6 +12,7 @@ import com.ctyeung.rxandroidex.databinding.ActivityCoroutineBindingImpl
 import com.ctyeung.rxandroidex.debounce.EmailEditText
 import com.ctyeung.rxandroidex.maps.TransformStuff
 import com.ctyeung.networkrequestex.network_retrofit.coroutine.RequestsRetrofit
+import com.ctyeung.rxandroidex.combinelatest.CoroutineCredentials
 import com.ctyeung.rxandroidex.timer.LinearTimeTask
 import java.lang.Exception
 
@@ -99,8 +100,8 @@ class CoroutineActivity : AppCompatActivity() {
                 enabled:Boolean ->
             binding?.btnLogin.isEnabled = enabled
         }
-       // var cred = Credentials(alertUsername, alertPassword, enableButton)
-       // cred.combineLast(binding?.editUsername, binding?.editPassword)
+        var cred = CoroutineCredentials(alertUsername, alertPassword, enableButton)
+        cred.combine(binding?.editUsername, binding?.editPassword)
     }
 
     /*
@@ -156,7 +157,7 @@ class CoroutineActivity : AppCompatActivity() {
             request.getUsers()
         }
         catch(ex: Exception) {
-            showToast("TryRxRetrofit() $ex")
+            showToast("TryCoroutineRetrofit() $ex")
         }
     }
 
