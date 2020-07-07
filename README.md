@@ -5,6 +5,7 @@ Primary principle: Observable -> Observer + Scheduler \
 Secondary principle: define onError(), cancel -> unsubscribe()
 
 ## User Interface
+<img width="220" src="https://user-images.githubusercontent.com/1282659/86789243-b3736680-c02c-11ea-95bf-7a40f74319af.jpg">
 <img width="220" src="https://user-images.githubusercontent.com/1282659/86539410-c0277b80-bec1-11ea-87a6-52d550e67fb2.jpg">
 
 ## CombineLast
