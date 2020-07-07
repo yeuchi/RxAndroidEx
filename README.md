@@ -27,8 +27,8 @@ Thanks to mt.uulu <sup>[4]</sup> on Stack overflow for the sample code. \
 <img width="350" alt="Screen Shot 2020-06-30 at 4 59 06 PM" src="https://user-images.githubusercontent.com/67604278/86181114-0e6c0180-baf3-11ea-8d4a-17d01d5f9a32.png">
 
 ## Timer
-Operator is an alternative to a timer function.
-RxKotlin : Thanks to Gabriel's article <sup>[2]</sup> for demonstrating how to create a linear timer task with RxOperator.
+Operator is an alternative to a timer function. \
+RxKotlin : Thanks to Gabriel's article <sup>[2]</sup> for demonstrating how to create a linear timer task with RxOperator. \
 Coroutine : Thanks to Anggrayudi's example <sup>[8]</sup> as starter code.
 
 ## RetroFit + RxAndroid
