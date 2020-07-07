@@ -24,6 +24,7 @@ class CoroutineActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_coroutine)
         binding.coroutine = this
 
+        setTitle("Coroutine")
         initCredentials()
     }
 

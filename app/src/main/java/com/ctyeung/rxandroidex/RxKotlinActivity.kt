@@ -25,6 +25,7 @@ class RxKotlinActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_rx_kotlin)
         binding.rxkotlin = this
 
+        setTitle("RxOperators")
         initCredentials()
     }
 
