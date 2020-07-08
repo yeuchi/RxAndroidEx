@@ -75,3 +75,6 @@ https://medium.com/@pro100svitlo/edittext-debounce-with-kotlin-coroutines-fd134d
 
 10. Suspend what you’re doing: Retrofit has now Coroutines support! by Paolo Rotolo, June 27, 2019 \
 https://proandroiddev.com/suspend-what-youre-doing-retrofit-has-now-coroutines-support-c65bd09ba067
+
+11. Understanding RxJava Zip Operator With Example by Amit Shekhar, 20th March 2019 \
+https://blog.mindorks.com/understanding-rxjava-zip-operator-with-example
