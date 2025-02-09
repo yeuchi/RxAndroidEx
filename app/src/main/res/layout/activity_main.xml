@@ -14,19 +14,19 @@
         android:gravity="center"
         tools:context=".MainActivity">
 
-            <Button
-                android:layout_width="@dimen/title_width"
-                android:layout_height="wrap_content"
-                android:id="@+id/btnRxKotlin"
-                android:text="@string/btn_rxkotlin"
-                android:onClick="@{()->main.onClickRxKotlin()}"/>
+        <Button
+            android:layout_width="@dimen/title_width"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnRxKotlin"
+            android:text="@string/btn_rxkotlin"
+            android:onClick="@{()->main.onClickRxKotlin()}"/>
 
-            <Button
-                android:layout_width="@dimen/title_width"
-                android:layout_height="wrap_content"
-                android:id="@+id/btnCoroutine"
-                android:text="@string/btn_coroutine"
-                android:onClick="@{()->main.onClickCoroutine()}"/>
+        <Button
+            android:layout_width="@dimen/title_width"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCoroutine"
+            android:text="@string/btn_coroutine"
+            android:onClick="@{()->main.onClickCoroutine()}"/>
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

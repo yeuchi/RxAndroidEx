@@ -35,12 +35,12 @@ class CoroutineActivity : AppCompatActivity() {
 
         var action : (String) -> Unit = {
                 msg: String ->
-            binding?.txtMapAction.text = "action: ${msg}"
+            binding?.txtMapAction?.text = "action: ${msg}"
         }
 
         var refresh : (String?) -> Unit = {
                 msg: String? ->
-            binding?.txtMapResult.text = "result: ${msg}"
+            binding?.txtMapResult?.text = "result: ${msg}"
         }
 
         //var transform = TransformStuff(refresh, action)
@@ -54,12 +54,12 @@ class CoroutineActivity : AppCompatActivity() {
 
         var action : (String) -> Unit = {
                 msg: String ->
-            binding?.txtFlatmapAction.text = "action: ${msg}"
+            binding?.txtFlatmapAction?.text = "action: ${msg}"
         }
 
         var refresh : (String?) -> Unit = {
                 msg: String? ->
-            binding?.txtFlatmapResult.text = "result: ${msg}"
+            binding?.txtFlatmapResult?.text = "result: ${msg}"
         }
 
         //var transform = TransformStuff(refresh, action)
@@ -86,17 +86,17 @@ class CoroutineActivity : AppCompatActivity() {
 
         var alertUsername : (Boolean) -> Unit = {
                 isValid:Boolean ->
-            binding?.txtUsernameWarning.visibility = getVisibility(isValid)
+            binding?.txtUsernameWarning?.visibility = getVisibility(isValid)
         }
 
         var alertPassword : (Boolean) -> Unit = {
                 isValid:Boolean ->
-            binding?.txtPasswordWarning.visibility = getVisibility(isValid)
+            binding?.txtPasswordWarning?.visibility = getVisibility(isValid)
         }
 
         var enableButton : (Boolean) -> Unit = {
                 enabled:Boolean ->
-            binding?.btnLogin.isEnabled = enabled
+            binding?.btnLogin?.isEnabled = enabled
         }
         var cred = Credentials(alertUsername, alertPassword, enableButton)
         cred.combine(binding?.editUsername, binding?.editPassword)
@@ -130,7 +130,7 @@ class CoroutineActivity : AppCompatActivity() {
                 else -> {
                     var refresh : (String) -> Unit = {
                             count: String ->
-                        binding?.txtTimerCount.text = count
+                        binding?.txtTimerCount?.text = count
                     }
 
                     timer = LinearTimeTask(refresh)
