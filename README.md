@@ -78,3 +78,9 @@ https://proandroiddev.com/suspend-what-youre-doing-retrofit-has-now-coroutines-s
 
 11. Understanding RxJava Zip Operator With Example by Amit Shekhar, 20th March 2019 \
 https://blog.mindorks.com/understanding-rxjava-zip-operator-with-example
+
+# Demo video
+https://github.com/user-attachments/assets/39676463-3edf-4c93-a28c-e5e4ae3f7a53
+
+
+
